@@ -123,7 +123,11 @@ practical-file-system-design-translation/
 
 参考文献：[书籍参考文献](references/bibliography.md)
 
-## 快速开始
+## 在线阅读
+
+访问我们的在线文档：[Practical File System Design 中文翻译](https://practical-file-system-design.vercel.app)
+
+## 本地开发
 
 ### 1. 获取项目
 
@@ -132,11 +136,39 @@ git clone https://github.com/BruceBlink/practical-file-system-design-translation
 cd practical-file-system-design-translation
 ```
 
-### 2. 阅读文档
+### 2. 安装依赖
+
+```bash
+npm install
+```
+
+### 3. 启动开发服务器
+
+```bash
+npm run dev
+```
+
+现在你可以在 `http://localhost:3000` 访问本地开发版本。
+
+### 4. 构建生产版本
+
+```bash
+npm run build
+npm run start
+```
+
+### 5. 文档结构
 
 - 访问 `chapters/` 目录查看已翻译的章节内容
 - 在 `references/bibliography.md` 中查找相关参考资料
 - 参考 `LICENSE` 了解使用条款
+
+## 技术栈
+
+- **框架**: [Next.js 14](https://nextjs.org/)
+- **样式**: [Tailwind CSS](https://tailwindcss.com/)
+- **部署**: [Vercel](https://vercel.com)
+- **内容**: Markdown
 
 ## 参与贡献
 
@@ -159,8 +191,15 @@ cd practical-file-system-design-translation
 
 本项目采用 [LICENSE 文件中指定的许可证] 进行许可。
 
+## 项目状态
+
+![部署状态](https://img.shields.io/github/deployments/BruceBlink/practical-file-system-design-translation/Production?label=vercel&logo=vercel)
+![上次提交](https://img.shields.io/github/last-commit/BruceBlink/practical-file-system-design-translation)
+![许可证](https://img.shields.io/github/license/BruceBlink/practical-file-system-design-translation)
+
 ## 联系方式
 
-- 项目维护者：[邮箱](likanug.g@qq.com)
-- 项目仓库：[仓库链接](https://github.com/BruceBlink/practical-file-system-design-translation.git)
-- 问题反馈：请使用 GitHub Issues
+- 项目维护者：[邮箱](mailto:likanug.g@qq.com)
+- 项目仓库：[GitHub](https://github.com/BruceBlink/practical-file-system-design-translation)
+- 问题反馈：[Issues](https://github.com/BruceBlink/practical-file-system-design-translation/issues)
+- 在线文档：[Vercel](https://practical-file-system-design.vercel.app)
