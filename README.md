@@ -12,16 +12,30 @@
 
 ## 目录结构
 
-``` json
+```json
 practical-file-system-design-translation/
-├── chapters/           # 翻译章节
-│   ├── chapter1.md    # 第一章：BeOS 和 BFS 简介
-│   ├── chapter2.md    # 第二章：什么是文件系统？
-│   └── ...
-├── references/        # 参考资料
-│   └── bibliography.md
-├── LICENSE           # 许可证
-└── README.md         # 项目说明
+├── app/              # Next.js 应用目录
+│   ├── globals.css   # 全局样式
+│   ├── layout.tsx    # 根布局组件
+│   ├── page.tsx      # 首页组件
+│   └── chapters/     # 章节页面
+│       └── [slug]/   # 动态路由
+├── content/          # 内容目录
+│   ├── chapters/     # 翻译章节
+│   │   ├── chapter1.md
+│   │   └── chapter2.md
+│   └── references/   # 参考资料
+│       └── bibliography.md
+├── lib/             # 工具库
+│   └── api.ts       # API 函数
+├── public/          # 静态资源目录
+│   ├── *.svg        # 图标资源
+│   └── fonts/       # 字体文件
+├── LICENSE          # 许可证
+├── README.md        # 项目说明
+├── next.config.js   # Next.js 配置
+├── tailwind.config.ts # Tailwind 配置
+└── tsconfig.json    # TypeScript 配置
 ```
 
 ## 内容目录
