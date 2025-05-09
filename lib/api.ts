@@ -9,6 +9,13 @@ export interface Chapter {
   title: string
   content: string
   description?: string
+  sections?: Section[]
+}
+
+export interface Section {
+  id: string
+  title: string
+  parent: string
 }
 
 export async function getAllChapters(): Promise<Chapter[]> {
@@ -20,6 +27,30 @@ export async function getAllChapters(): Promise<Chapter[]> {
       .map(async (filename) => {
         const slug = filename.replace(/\.md$/, '')
         const chapter = await getChapterContent(slug)
+        
+        if (chapter) {
+          // 解析内容中的二级标题作为章节
+          const sections = chapter.content
+            .split('\n')
+            .filter(line => line.startsWith('## '))
+            .map(line => {
+              const title = line.replace('## ', '').trim()
+              const id = title
+                .toLowerCase()
+                .replace(/[^\w\s-]/g, '')
+                .replace(/\s+/g, '-')
+              return {
+                id,
+                title,
+                parent: chapter.slug
+              }
+            })
+
+          if (sections.length > 0) {
+            chapter.sections = sections
+          }
+        }
+        
         return chapter
       })
   )
