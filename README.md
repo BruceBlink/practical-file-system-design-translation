@@ -12,7 +12,7 @@
 
 ## 目录结构
 
-```json
+```bash
 practical-file-system-design-translation/
 ├── app/              # Next.js 应用目录
 │   ├── globals.css   # 全局样式
