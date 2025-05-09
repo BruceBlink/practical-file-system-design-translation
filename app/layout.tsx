@@ -13,9 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN" className="scroll-smooth">
-      <body className="font-sans antialiased text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 flex flex-col min-h-screen">
-        {children}
-        <footer className="py-4 mt-auto border-t border-gray-200 dark:border-gray-800">
+      <body className="font-sans antialiased bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 flex flex-col min-h-screen">
+        <div className="flex-1">
+          {children}
+        </div>
+        <footer className="mt-auto py-4 border-t border-gray-200/10">
           <div className="container mx-auto px-4 text-center text-sm text-gray-600 dark:text-gray-400">
             基于 Dominic Giampaolo 的《Practical File System Design》英文原版翻译
           </div>

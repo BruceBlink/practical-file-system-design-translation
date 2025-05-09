@@ -11,8 +11,8 @@ export default function ChapterLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-[calc(100vh-108px)] bg-white dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div className="flex-1">
+      <div className="max-w-4xl mx-auto px-4 py-8">
         <main className="prose prose-lg dark:prose-invert max-w-none">
           {children}
         </main>
