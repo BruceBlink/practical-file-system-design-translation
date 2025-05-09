@@ -23,7 +23,7 @@
 1. 克隆此项目到本地：
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/BruceBlink/practical-file-system-design-translation.git
    ```
 
 2. 访问 `chapters/` 目录以查看翻译后的章节内容。
