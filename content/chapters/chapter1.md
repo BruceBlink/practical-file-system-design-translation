@@ -1,6 +1,6 @@
-# Introduction to the BeOS and BFS
+# BeOS 和 BFS 简介
 
-## 1.1 History Leading Up to BFS
+## 1.1 BFS 的历史背景
 
 1990 年末，Jean Louis Gassée 创立了 Be, Inc.，旨在解决当时操作系统存在的诸多问题。他认为，大多数操作系统的问题在于它们背负了多年遗留下来的包袱。这种遗留带来的代价就是性能：底层硬件的速度并没有得到充分利用。
 
