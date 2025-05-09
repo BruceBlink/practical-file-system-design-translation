@@ -1,4 +1,4 @@
-# Introduction to the BeOS and BFS
+# 1. Introduction to the BeOS and BFS
 
 ## 1.1 History Leading Up to BFS
 

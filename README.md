@@ -12,7 +12,7 @@
 
 ## 目录结构
 
-```
+``` json
 practical-file-system-design-translation/
 ├── chapters/           # 翻译章节
 │   ├── chapter1.md    # 第一章：BeOS 和 BFS 简介
