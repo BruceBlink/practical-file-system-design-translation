@@ -40,26 +40,26 @@ practical-file-system-design-translation/
 
 ## 内容目录
 
-1. [第一章：BeOS 和 BFS 简介](chapters/chapter1.md)
-   - [1.1 BFS 的历史背景](chapters/chapter1.md#11-history-leading-up-to-bfs)
-   - [1.2 设计目标](chapters/chapter1.md#12-设计目标)
-   - [1.3 设计约束](chapters/chapter1.md#13-设计约束)
-   - [1.4 小结](chapters/chapter1.md#14-小结)
-2. [第二章：什么是文件系统？](chapters/chapter2.md)
+1. [第一章：BeOS 和 BFS 简介](content/chapters/chapter1.md)
+   - [1.1 BFS 的历史背景](content/chapters/chapter1.md#11-history-leading-up-to-bfs)
+   - [1.2 设计目标](content/chapters/chapter1.md#12-设计目标)
+   - [1.3 设计约束](content/chapters/chapter1.md#13-设计约束)
+   - [1.4 小结](content/chapters/chapter1.md#14-小结)
+2. [第二章：什么是文件系统？](content/chapters/chapter2.md)
    - 2.1 基础知识
    - 2.2 术语
    - 2.3 抽象
    - 2.4 基本文件系统操作
    - 2.5 扩展文件系统操作
    - 2.6 小结
-3. [第三章：其他文件系统](chapters/chapter3.md)
+3. [第三章：其他文件系统](content/chapters/chapter3.md)
    - 3.1 BSD FFS
    - 3.2 Linux ext2
    - 3.3 Macintosh HFS
    - 3.4 Irix XFS
    - 3.5 Windows NT 的 NTFS
    - 3.6 小结
-4. [第四章：BFS 的数据结构](chapters/chapter4.md)
+4. [第四章：BFS 的数据结构](content/chapters/chapter4.md)
    - 4.1 什么是磁盘？
    - 4.2 如何管理磁盘块
    - 4.3 分配组
@@ -71,12 +71,12 @@ practical-file-system-design-translation/
    - 4.9 目录
    - 4.10 索引
    - 4.11 小结
-5. [第五章：属性、索引和查询](chapters/chapter5.md)
+5. [第五章：属性、索引和查询](content/chapters/chapter5.md)
    - 5.1 属性
    - 5.2 索引
    - 5.3 查询
    - 5.4 小结
-6. [第六章：分配策略](chapters/chapter6.md)
+6. [第六章：分配策略](content/chapters/chapter6.md)
    - 6.1 磁盘上的数据布局
    - 6.2 什么是分配策略？
    - 6.3 物理磁盘
@@ -84,7 +84,7 @@ practical-file-system-design-translation/
    - 6.5 访问类型
    - 6.6 BFS 中的分配策略
    - 6.7 小结
-7. [第七章：日志](chapters/chapter7.md)
+7. [第七章：日志](content/chapters/chapter7.md)
    - 7.1 基础知识
    - 7.2 日志如何工作
    - 7.3 日志的类型
@@ -94,19 +94,19 @@ practical-file-system-design-translation/
    - 7.7 BFS 的日志实现
    - 7.8 深入了解事务
    - 7.9 小结
-8. [第八章：磁盘块缓存](chapters/chapter8.md)
+8. [第八章：磁盘块缓存](content/chapters/chapter8.md)
    - 8.1 背景
    - 8.2 缓存的组织
    - 8.3 缓存优化
    - 8.4 I/O 与缓存
    - 8.5 小结
-9. [第九章：文件系统性能](chapters/chapter9.md)
+9. [第九章：文件系统性能](content/chapters/chapter9.md)
    - 9.1 什么是性能？
    - 9.2 性能基准
    - 9.3 性能数据
    - 9.4 BFS 的性能
    - 9.5 小结
-10. [第十章：Vnode 层](chapters/chapter10.md)
+10. [第十章：Vnode 层](content/chapters/chapter10.md)
     - 10.1 背景
     - 10.2 Vnode 层的概念
     - 10.3 Vnode 层支持例程
@@ -114,12 +114,12 @@ practical-file-system-design-translation/
     - 10.5 节点监视器
     - 10.6 实时查询
     - 10.7 小结
-11. [第十一章：用户级 API](chapters/chapter11.md)
+11. [第十一章：用户级 API](content/chapters/chapter11.md)
     - 11.1 POSIX API 和 C 扩展
     - 11.2 C++ API
     - 11.3 使用 API
     - 11.4 小结
-12. [第十二章：测试](chapters/chapter12.md)
+12. [第十二章：测试](content/chapters/chapter12.md)
     - 12.1 支持工具
     - 12.2 数据结构验证示例
     - 12.3 调试工具
@@ -128,7 +128,7 @@ practical-file-system-design-translation/
     - 12.6 测试方法
     - 12.7 小结
 
-附录：[文件系统构建工具包](chapters/appendix.md)
+附录：[文件系统构建工具包](content/chapters/appendix.md)
 
 - A.1 简介
 - A.2 概述
@@ -173,7 +173,7 @@ npm run start
 
 ### 5. 文档结构
 
-- 访问 `chapters/` 目录查看已翻译的章节内容
+- 访问 `content/chapters/` 目录查看已翻译的章节内容
 - 在 `references/bibliography.md` 中查找相关参考资料
 - 参考 `LICENSE` 了解使用条款
 
