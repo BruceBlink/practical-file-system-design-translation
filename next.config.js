@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 移除 output: 'export'，因为 Vercel 会自动处理构建输出
   images: {
-    unoptimized: true
+    // 在 Vercel 上部署，如果没有使用自定义 image loader，可以设为 true
+    unoptimized: true,
   },
-  // 添加性能优化配置
   swcMinify: true,
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  // ⚠️ 确保没有 output: 'export'，也不要使用 next export
 }
 
 module.exports = nextConfig
