@@ -27,10 +27,10 @@ practical-file-system-design-translation/
 ## 内容目录
 
 1. [第一章：BeOS 和 BFS 简介](chapters/chapter1.md)
-   - 1.1 BFS 的历史背景
-   - 1.2 设计目标
-   - 1.3 设计约束
-   - 1.4 小结
+   - [1.1 BFS 的历史背景](chapters/chapter1.md#11-history-leading-up-to-bfs)
+   - [1.2 设计目标](chapters/chapter1.md#12-设计目标)
+   - [1.3 设计约束](chapters/chapter1.md#13-设计约束)
+   - [1.4 小结](chapters/chapter1.md#14-小结)
 2. [第二章：什么是文件系统？](chapters/chapter2.md)
    - 2.1 基础知识
    - 2.2 术语
@@ -115,6 +115,7 @@ practical-file-system-design-translation/
     - 12.7 小结
 
 附录：[文件系统构建工具包](chapters/appendix.md)
+
 - A.1 简介
 - A.2 概述
 - A.3 数据结构
