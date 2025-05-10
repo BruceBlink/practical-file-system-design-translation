@@ -117,18 +117,19 @@ i-node 只能存储有限数量的块地址，因此也限制了文件的最大�
 在这种列表式块映射方法中，从文件位置映射到磁盘块地址是非常直接的。文件位置可以作为文件块列表的索引。由于直接块、间接块、双重间接块和三重间接块所能映射的空间是固定的，文件系统总是能准确定位数据块的地址。
 
 伪代码如列表 2-1 所示，演示了如何从一个位于双重间接范围内的文件位置，映射到实际数据块地址。使用 `dbl_indirect_index` 和 `indirect_index`，文件系统能加载双重间接块和间接块，找到数据块地址。加载数据块后，`block_offset` 可用于定位到目标字节。若该位置仅在直接块或间接块范围内，算法会更简单。
+
 ```c
 blksize = size of the file system block 
 size dsize = amount of file data mapped by direct blocks 
 indsize = amount of file data mapped by an indirect block 
 if (filepos >= (dsize + indsize)) { /* double-indirect blocks */
     filepos -= (dsize + indsize);
-	dbl_indirect_index = filepos / indsize;
+    dbl_indirect_index = filepos / indsize;
 if (filepos >= indsize) { /* indirect blocks */
     filepos -= (dbl_indirect_index * indsize);
-	indirect_index = filepos / blksize;
+    indirect_index = filepos / blksize;
 }
-	filepos -= (indirect_index * blksize); /* offset in data block */
+    filepos -= (indirect_index * blksize); /* offset in data block */
     block_offset = filepos;
 }
 ```
