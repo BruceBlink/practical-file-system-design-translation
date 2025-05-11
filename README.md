@@ -46,12 +46,12 @@ practical-file-system-design-translation/
    - [1.3 设计约束](content/chapters/chapter1.md#13-设计约束)
    - [1.4 小结](content/chapters/chapter1.md#14-小结)
 2. [第二章：什么是文件系统？](content/chapters/chapter2.md)
-   - 2.1 基础知识
-   - 2.2 术语
-   - 2.3 抽象
-   - 2.4 基本文件系统操作
-   - 2.5 扩展文件系统操作
-   - 2.6 小结
+   - [2.1 基础知识](content/chapters/chapter2.md#21-基础知识)
+   - [2.2 术语](content/chapters/chapter2.md#22-术语)
+   - [2.3 抽象](content/chapters/chapter2.md#23-抽象概念)
+   - [2.4 基本文件系统操作](content/chapters/chapter2.md#24-基本文件系统操作basic-file-system-operations)
+   - [2.5 扩展文件系统操作](content/chapters/chapter2.md#25-扩展文件系统操作extended-file-system-operations)
+   - [2.6 小结](content/chapters/chapter2.md#26-小结summary)
 3. [第三章：其他文件系统](content/chapters/chapter3.md)
    - 3.1 BSD FFS
    - 3.2 Linux ext2
