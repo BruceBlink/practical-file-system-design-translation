@@ -53,12 +53,12 @@ practical-file-system-design-translation/
    - [2.5 扩展文件系统操作](content/chapters/chapter2.md#25-扩展文件系统操作extended-file-system-operations)
    - [2.6 小结](content/chapters/chapter2.md#26-小结summary)
 3. [第三章：其他文件系统](content/chapters/chapter3.md)
-   - 3.1 BSD FFS
-   - 3.2 Linux ext2
-   - 3.3 Macintosh HFS
-   - 3.4 Irix XFS
-   - 3.5 Windows NT 的 NTFS
-   - 3.6 小结
+   - [3.1 BSD FFS](content/chapters/chapter3.md#31-bsd-ffs)
+   - [3.2 Linux ext2](content/chapters/chapter3.md#32-linux-ext2)
+   - [3.3 Macintosh HFS](content/chapters/chapter3.md#33-macintosh-hfs)
+   - [3.4 Irix XFS](content/chapters/chapter3.md#34-irix-xfs)
+   - [3.5 Windows NT 的 NTFS](content/chapters/chapter3.md#35-windows-nt-的-ntfs)
+   - [3.6 小结](content/chapters/chapter3.md#36-小结)
 4. [第四章：BFS 的数据结构](content/chapters/chapter4.md)
    - 4.1 什么是磁盘？
    - 4.2 如何管理磁盘块
