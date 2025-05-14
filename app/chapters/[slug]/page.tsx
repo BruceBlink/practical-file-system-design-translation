@@ -80,10 +80,30 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
 
       <nav className="mt-12 flex justify-between border-t border-gray-200 dark:border-gray-800 pt-6">
         <div>
-          {/* Previous chapter link will be added here */}
+          {chapter.previousChapter && (
+            <Link 
+              href={`/chapters/${chapter.previousChapter.slug}`}
+              className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              上一章：{chapter.previousChapter.title}
+            </Link>
+          )}
         </div>
         <div>
-          {/* Next chapter link will be added here */}
+          {chapter.nextChapter && (
+            <Link
+              href={`/chapters/${chapter.nextChapter.slug}`}
+              className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+            >
+              {chapter.nextChapter.title}：下一章
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          )}
         </div>
       </nav>
     </article>
