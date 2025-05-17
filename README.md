@@ -177,6 +177,21 @@ npm run start
 - 在 `references/bibliography.md` 中查找相关参考资料
 - 参考 `LICENSE` 了解使用条款
 
+## 翻译进度
+
+- [x] 第一章：BeOS 和 BFS 简介
+- [x] 第二章：什么是文件系统？
+- [x] 第三章：其他文件系统
+- [x] 第四章：BFS 的数据结构
+- [x] 第五章：属性、索引和查询
+- [x] 第六章：分配策略
+- [x] 第七章：日志
+- [ ] 第八章：磁盘块缓存
+- [ ] 第九章：文件系统性能
+- [ ] 第十章：Vnode 层
+- [ ] 第十一章：用户级 API
+- [ ] 第十二章：测试
+
 ## 技术栈
 
 - **框架**: [Next.js 14](https://nextjs.org/)
@@ -209,6 +224,8 @@ npm run start
 
 ![部署状态](https://img.shields.io/github/deployments/BruceBlink/practical-file-system-design-translation/Production?label=vercel&logo=vercel)
 ![上次提交](https://img.shields.io/github/last-commit/BruceBlink/practical-file-system-design-translation)
+![翻译进度](https://img.shields.io/badge/翻译进度-55%25-green)
+![维护状态](https://img.shields.io/badge/维护状态-积极维护-brightgreen)
 ![许可证](https://img.shields.io/github/license/BruceBlink/practical-file-system-design-translation)
 
 ## 联系方式
