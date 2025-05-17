@@ -60,17 +60,17 @@ practical-file-system-design-translation/
    - [3.5 Windows NT 的 NTFS](content/chapters/chapter3.md#35-windows-nt-的-ntfs)
    - [3.6 小结](content/chapters/chapter3.md#36-小结)
 4. [第四章：BFS 的数据结构](content/chapters/chapter4.md)
-   - 4.1 什么是磁盘？
-   - 4.2 如何管理磁盘块
-   - 4.3 分配组
-   - 4.4 块运行
-   - 4.5 超级块
-   - 4.6 I-Node 结构
-   - 4.7 I-Node 的核心：数据流
-   - 4.8 属性
-   - 4.9 目录
-   - 4.10 索引
-   - 4.11 小结
+   - [4.1 什么是磁盘？](content/chapters/chapter4.md#41-什么是磁盘)
+   - [4.2 如何管理磁盘块](content/chapters/chapter4.md#42-如何管理磁盘块)
+   - [4.3 分配组](content/chapters/chapter4.md#43-分配组allocation-groups)
+   - [4.4 块运行](content/chapters/chapter4.md#44-块运行block-runs)
+   - [4.5 超级块](content/chapters/chapter4.md#45-超级块-superblock)
+   - [4.6 I-Node 结构](content/chapters/chapter4.md#46-i-node-结构-the-i-node-structure)
+   - [4.7 I-Node 的核心：数据流](content/chapters/chapter4.md#47-i-node-的核心数据流-the-core-of-an-i-node-the-data-stream)
+   - [4.8 属性](content/chapters/chapter4.md#48-属性-attributes)
+   - [4.9 目录](content/chapters/chapter4.md#49-目录-directories)
+   - [4.10 索引](content/chapters/chapter4.md#410-索引-indexing)
+   - [4.11 小结](content/chapters/chapter4.md#411-总结-summary)
 5. [第五章：属性、索引和查询](content/chapters/chapter5.md)
    - 5.1 属性
    - 5.2 索引
