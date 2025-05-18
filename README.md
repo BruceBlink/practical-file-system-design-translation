@@ -186,7 +186,7 @@ npm run start
 - [x] 第五章：属性、索引和查询
 - [x] 第六章：分配策略
 - [x] 第七章：日志
-- [ ] 第八章：磁盘块缓存
+- [x] 第八章：磁盘块缓存
 - [ ] 第九章：文件系统性能
 - [ ] 第十章：Vnode 层
 - [ ] 第十一章：用户级 API
@@ -224,7 +224,7 @@ npm run start
 
 ![部署状态](https://img.shields.io/github/deployments/BruceBlink/practical-file-system-design-translation/Production?label=vercel&logo=vercel)
 ![上次提交](https://img.shields.io/github/last-commit/BruceBlink/practical-file-system-design-translation)
-![翻译进度](https://img.shields.io/badge/翻译进度-55%25-green)
+![翻译进度](https://img.shields.io/badge/翻译进度-67%25-green)
 ![维护状态](https://img.shields.io/badge/维护状态-积极维护-brightgreen)
 ![许可证](https://img.shields.io/github/license/BruceBlink/practical-file-system-design-translation)
 
