@@ -20,6 +20,13 @@ export interface Section {
   parent: string
 }
 
+  /**
+   * Reads all markdown files from the given directory, filters them by
+   * extension, and sorts them by chapter number (extracted from the filename).
+   *
+   * @param dirPath path to the directory containing the markdown files
+   * @returns an array of markdown file names, sorted by chapter number
+   */
 function getAllMarkdownFiles(dirPath: string): string[] {
     const files = fs.readdirSync(dirPath)
     .filter(filename => filename.endsWith('.md'))
