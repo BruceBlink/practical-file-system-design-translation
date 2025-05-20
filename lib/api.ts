@@ -23,7 +23,12 @@ export interface Section {
 export async function getAllChapters(): Promise<Chapter[]> {
   const files = fs.readdirSync(chaptersDirectory)
     .filter(filename => filename.endsWith('.md'))
-    .sort()
+    .sort((a, b) => {
+      // 提取章节号并转换为数字进行比较
+      const numA = parseInt(a.match(/chapter(\d+)\.md/)?.[1] || '0')
+      const numB = parseInt(b.match(/chapter(\d+)\.md/)?.[1] || '0')
+      return numA - numB
+    })
 
   const chapters = await Promise.all(
     files.map(async (filename) => {
