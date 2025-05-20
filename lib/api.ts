@@ -20,8 +20,8 @@ export interface Section {
   parent: string
 }
 
-export async function getAllChapters(): Promise<Chapter[]> {
-  const files = fs.readdirSync(chaptersDirectory)
+function getAllMarkdownFiles(dirPath: string): string[] {
+    const files = fs.readdirSync(dirPath)
     .filter(filename => filename.endsWith('.md'))
     .sort((a, b) => {
       // 提取章节号并转换为数字进行比较
@@ -29,6 +29,11 @@ export async function getAllChapters(): Promise<Chapter[]> {
       const numB = parseInt(b.match(/chapter(\d+)\.md/)?.[1] || '0')
       return numA - numB
     })
+    return files
+}
+
+export async function getAllChapters(): Promise<Chapter[]> {
+  const files = getAllMarkdownFiles(chaptersDirectory)
 
   const chapters = await Promise.all(
     files.map(async (filename) => {
@@ -67,9 +72,7 @@ export async function getAllChapters(): Promise<Chapter[]> {
 
 export async function getChapterContent(slug: string): Promise<Chapter | null> {
   // 获取所有章节文件
-  const files = fs.readdirSync(chaptersDirectory)
-    .filter(file => file.endsWith('.md'))
-    .sort()  // 确保按文件名排序
+  const files = getAllMarkdownFiles(chaptersDirectory)  // 确保按文件名排序
 
   const fileIndex = files.findIndex(file => file === `${slug}.md`)
   if (fileIndex === -1) {
