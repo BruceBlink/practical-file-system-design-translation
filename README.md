@@ -224,7 +224,7 @@ npm run start
 
 ![部署状态](https://img.shields.io/github/deployments/BruceBlink/practical-file-system-design-translation/Production?label=vercel&logo=vercel)
 ![上次提交](https://img.shields.io/github/last-commit/BruceBlink/practical-file-system-design-translation)
-![翻译进度](https://img.shields.io/badge/翻译进度-67%25-green)
+![翻译进度](https://img.shields.io/badge/翻译进度-79%25-green)
 ![维护状态](https://img.shields.io/badge/维护状态-积极维护-brightgreen)
 ![许可证](https://img.shields.io/github/license/BruceBlink/practical-file-system-design-translation)
 
