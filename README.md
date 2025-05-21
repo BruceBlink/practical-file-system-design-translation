@@ -129,7 +129,7 @@ practical-file-system-design-translation/
     - 12.6 测试方法
     - 12.7 小结
 
-附录：[文件系统构建套件](content/chapters/appendix.md)
+附录：[文件系统构建套件](content/chapters/Appendix.md)
 
 - A.1 简介
 - A.2 概述

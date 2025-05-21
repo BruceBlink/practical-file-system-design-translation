@@ -118,7 +118,6 @@
 - `int fs_rename(fs_info, fs_inode odir, oname, fs_inode ndir, nname);`
 - `int fs_unlink(fs_info, fs_inode dir, name);`
 
-
 ## 参考书目(Bibliography)
 
 ### General
@@ -130,13 +129,11 @@
 - McKusick, M., K. Bostic, et al. **The Design and Implementation of the 4.4 BSD Operating System.** Addison-Wesley, 1996.
 - Stallings, William. **Operating Systems: Internals and Design Principles, Third Edition.** Prentice Hall, 1998.
 
-
 ### Other File Systems
 
 - Apple Computer. **Inside Macintosh: Files.** Apple Computer.
 - Custer, Helen. **Inside the Windows NT File System.** Microsoft Press, 1994.
 - Sweeney, Adam, et al. **"Scalability in the XFS file system."** In *Proceedings of the USENIX 1996 Annual Technical Conference*, January 1996.
-
 
 ### File System Organization and Performance
 
@@ -150,7 +147,6 @@
 - Smith, Keith A., and Margo Seltzer. **"A comparison of FFS disk allocation policies."** In *Proceedings of the Usenix Technical Conference*, January 1996.
 - Smith, Keith, and Margo Seltzer. **File Layout and File System Performance.** Technical report TR-35-94. Harvard University. Also available via [http://www.eecs.harvard.edu/vino/fs-perf/](https://www.google.com/search?q=http://www.eecs.harvard.edu/vino/fs-perf/).
 
-
 ### Journaling
 
 - Chutani, et al. **"The Episode file system."** In *Usenix Conference Proceedings*, pages 43–60, winter 1992.
@@ -158,7 +154,6 @@
 - Hagmann, Robert. **"Reimplementing the Cedar file system using logging and group commit."** In *Proceedings of the 11th Symposium on Operating Systems Principles*, November 1987.
 - Hisgen, Andy, et al. **New-Value Logging in the Echo Replicated File System.** Technical report. DEC Systems Research Center, June 1993.
 - Rosenblum, Mendel, and John K. Ousterhout. **"The design and implementation of a log-structured file system."** *ACM Transactions on Computer Systems* 10(1):26–52, February 1992.
-
 
 ### Attributes, Indexing, and Queries
 
