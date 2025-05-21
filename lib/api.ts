@@ -31,6 +31,9 @@ function getAllMarkdownFiles(dirPath: string): string[] {
     const files = fs.readdirSync(dirPath)
     .filter(filename => filename.endsWith('.md'))
     .sort((a, b) => {
+      // 处理特殊情况：Appendix.md 应该排在最后
+      if (a === 'Appendix.md') return 1
+      if (b === 'Appendix.md') return -1
       // 提取章节号并转换为数字进行比较
       const numA = parseInt(a.match(/chapter(\d+)\.md/)?.[1] || '0')
       const numB = parseInt(b.match(/chapter(\d+)\.md/)?.[1] || '0')
