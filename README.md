@@ -189,8 +189,8 @@ npm run start
 - [x] 第八章：磁盘块缓存
 - [x] 第九章：文件系统性能
 - [x] 第十章：Vnode 层
-- [ ] 第十一章：用户级 API
-- [ ] 第十二章：测试
+- [x] 第十一章：用户级 API
+- [x] 第十二章：测试
 
 ## 技术栈
 
@@ -224,7 +224,7 @@ npm run start
 
 ![部署状态](https://img.shields.io/github/deployments/BruceBlink/practical-file-system-design-translation/Production?label=vercel&logo=vercel)
 ![上次提交](https://img.shields.io/github/last-commit/BruceBlink/practical-file-system-design-translation)
-![翻译进度](https://img.shields.io/badge/翻译进度-79%25-green)
+![翻译进度](https://img.shields.io/badge/翻译进度-91%25-green)
 ![维护状态](https://img.shields.io/badge/维护状态-积极维护-brightgreen)
 ![许可证](https://img.shields.io/github/license/BruceBlink/practical-file-system-design-translation)
 
