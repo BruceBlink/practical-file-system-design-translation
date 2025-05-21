@@ -24,6 +24,7 @@ practical-file-system-design-translation/
 │   ├── chapters/     # 翻译章节
 │   │   ├── chapter1.md
 │   │   └── chapter2.md
+│   │   └── ....md
 │   └── references/   # 参考资料
 │       └── bibliography.md
 ├── lib/             # 工具库
@@ -128,14 +129,14 @@ practical-file-system-design-translation/
     - 12.6 测试方法
     - 12.7 小结
 
-附录：[文件系统构建工具包](content/chapters/appendix.md)
+附录：[文件系统构建套件](content/chapters/appendix.md)
 
 - A.1 简介
 - A.2 概述
 - A.3 数据结构
 - A.4 API
 
-参考文献：[书籍参考文献](references/bibliography.md)
+参考文献：[书籍参考文献](content/references/bibliography.md)
 
 ## 在线阅读
 
@@ -191,6 +192,7 @@ npm run start
 - [x] 第十章：Vnode 层
 - [x] 第十一章：用户级 API
 - [x] 第十二章：测试
+- [x] 附录：文件系统构建套件
 
 ## 技术栈
 
@@ -224,7 +226,7 @@ npm run start
 
 ![部署状态](https://img.shields.io/github/deployments/BruceBlink/practical-file-system-design-translation/Production?label=vercel&logo=vercel)
 ![上次提交](https://img.shields.io/github/last-commit/BruceBlink/practical-file-system-design-translation)
-![翻译进度](https://img.shields.io/badge/翻译进度-91%25-green)
+![翻译进度](https://img.shields.io/badge/翻译进度-已完成-green)
 ![维护状态](https://img.shields.io/badge/维护状态-积极维护-brightgreen)
 ![许可证](https://img.shields.io/github/license/BruceBlink/practical-file-system-design-translation)
 
