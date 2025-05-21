@@ -283,3 +283,101 @@ BQuery 对象在内部将基于堆栈的后缀运算符转换为中缀字符串�
 节点监视器监视特定的文件或条目。如果程序希望接收目录中任何文件更改的通知，它必须对该目录中的所有文件发出节点监视器请求。如果程序只希望接收目录中文件创建或删除的通知，那么它只需要监视该目录。
 
 围绕节点监视器没有构建复杂的类。程序通过两个简单的 C++ 函数 `watch_node()` 和 `stop_watching()` 访问节点监视器。
+
+## 11.3 使用 API (Using the API)
+
+尽管我们对 BeOS C++ Storage Kit 的讨论提供了一个很好的高层概述，但它并没有展现编程 API 的具体细节。
+
+通过一个使用 BeOS Storage Kit 的具体示例，将有助于完成循环，并使 API 更加直观。
+
+在这个示例中，我们将接触 BeOS Storage Kit 的大部分功能，以编写一个程序：
+
+- 创建一个**关键词索引**
+- 遍历文件目录，为每个文件**生成关键词**
+- 将关键词作为**文件属性**写入
+- 对关键词索引执行**查询**，查找包含特定关键词的文件
+
+尽管该示例省略了一些细节（例如如何合成简短的关键词列表）和一些错误检查，但它确实演示了 Storage Kit 类的实际应用。
+
+### 设置 (The Setup)
+
+在生成任何关键词或添加属性之前，我们的示例程序首先**创建关键词索引**。这一步是必要的，以确保所有关键词属性都将被索引。任何打算使用索引的程序都应在生成任何需要索引的属性之前**始终**创建索引。
+
+```c
+#define INDEX_NAME "Keyword"
+main(int argc, char **argv){
+    BPath path(argv[1]);
+    dev_t dev;
+    /*
+    首先，我们将获取此路径所指向文件系统的设备句柄，
+    然后我们将使用它来创建我们的“Keyword”索引。
+    请注意，如果索引已经存在并且我们再次创建它，不会造成任何损害。
+    */
+    dev = dev_for_path(path.Path());
+    if (dev < 0)
+        exit(5);
+    fs_create_index(dev, INDEX_NAME, B_STRING_TYPE, 0);
+```
+
+### 生成属性 (Generating the Attributes)
+
+程序的下一阶段是遍历路径所引用的目录中的所有文件。程序在一个单独的函数 `generate_keywords()` 中完成这项工作，`main()` 函数会调用它。`main()` 函数将其 `BPath` 对象传递给 `generate_keywords()`，以指示要遍历哪个目录。
+
+```c
+void generate_keywords(BPath *path){
+    BDirectory dir;
+    entry_ref ref;
+    dir.SetTo(path->Path());
+    if (dir.InitCheck() != 0) /* hmmm, dir doesn’t exist? */
+        return;
+    while(dir.GetNextRef(&ref) == B_NO_ERROR) {
+        char *keywords;
+        BFile file;
+        file.SetTo(&ref, O_RDWR);
+        keywords = synthesize_keywords(&file);
+        file.WriteAttr(INDEX_NAME, B_STRING_TYPE, 0, keywords, strlen(keywords)+1);
+        free(keywords);
+    }
+}
+```
+
+例程的第一部分初始化 `BDirectory` 对象并检查它是否指向有效目录。`generate_keywords()` 的主循环在调用 `GetNextRef()` 时进行迭代。每次调用 `GetNextRef()` 都会返回目录中下一个条目的引用，直到没有更多条目为止。`GetNextRef()` 返回的 `entry_ref` 对象用于初始化 `BFile` 对象，以便可以读取文件内容。
+
+接下来，`generate_keywords()` 调用 `synthesize_keywords()`。尽管我们省略了细节，但 `synthesize_keywords()` 可能会读取文件内容并生成一个**关键词列表**作为字符串。
+
+合成关键词列表后，我们的示例程序使用 `WriteAttr()` 函数将这些关键词作为**文件属性**写入。写入关键词属性也会自动索引关键词，因为关键词索引已经存在。
+
+C++ `BFile` 对象的一个出色功能是，每次调用 `SetTo()` 时，它都会正确处理任何以前的文件引用，并且在销毁时会自动清理使用的任何资源。此功能消除了在操作许多文件时**文件描述符泄漏**的可能性。
+
+### 发出查询 (Issuing a Query)
+
+我们示例的最后一部分展示了如何对包含特定关键词的文件发出查询。发出查询的设置几乎没有意外。我们为查询构建了谓词，它是一个包含表达式 `Keyword = *<word>*` 的字符串。查询的 `<word>` 部分是函数的一个字符串参数。查询周围使用星号使其成为**子字符串匹配**。
+
+```c
+void do_query(BVolume *vol, char *word){
+    char buff[512];
+    BQuery query;
+    BEntry match_entry;
+    BPath path;
+    sprintf(buff, "%s = *%s*", INDEX_NAME, word);
+    query.SetPredicate(buff);
+    query.SetVolume(vol);
+    query.Fetch();
+    while(query.GetNextEntry(&match_entry) == B_NO_ERROR) {
+        match_entry.GetPath(&path);
+        printf("%s\n", path.Path());
+    }
+}
+```
+
+设置查询的最后一步是使用 `SetPredicate()` 指定要在哪个卷上发出查询。要启动查询，我们调用 `Workspace()`。当然，实际程序会检查 `Workspace()` 返回的错误。
+
+查询的最后阶段是通过调用 `GetNextEntry()` 来遍历结果。这与我们上面 `generate_keywords()` 函数中遍历目录的方式类似。调用 `GetNextEntry()` 而不是 `GetNextRef()` 允许我们获取匹配查询的文件路径。对于我们这里的目的，路径是我们感兴趣的全部内容。如果需要打开和读取文件，那么调用 `GetNextRef()` 可能更合适。
+
+这个示例的重点不是创建关键词属性的具体情况，而是展示程序**轻松整合**这些功能的方式。只需几行代码，程序就可以添加属性和索引，从而获得基于这些属性发出查询的能力。
+
+## 11.4 总结 (Summary)
+
+BeOS 的两个用户级 API 暴露了 BeOS vnode 层支持并由 BFS 实现的功能。BeOS 支持传统的 POSIX 文件 I/O API（带有一些扩展）和一个完全面向对象的 C++ API。C++ API 提供了诸如**实时查询**和**节点监视**等传统 C API 无法访问的功能。只能从 C 访问的函数是用于遍历、创建和删除索引的索引函数。
+
+C++ API 的设计引发了**倡导 Macintosh 风格文件处理方法**和**倡导 POSIX 风格**的两者之间的冲突。在 BeOS 文件 I/O 的类层次结构中编纂的折衷解决方案是可以接受且有效的，即使设计中的某些部分看起来不那么理想。
